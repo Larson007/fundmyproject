@@ -12,10 +12,10 @@ class ContributionFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $contribution = new Contribution();
-        $contribution->setAmount(1000.00);
-        $contribution->setUser($this->getReference("regina"));
-        $contribution->setProject($this->getReference("Good Girl"));
-        $this->addReference("amount", $contribution); //implements contribution
+        $contribution->setAmount(5500);
+        $contribution->setUser($this->getReference("emma"));
+        $contribution->setProject($this->getReference("good-girl"));
+        $this->setReference("amount", $contribution);
         $manager->persist($contribution);
 
         $manager->flush();

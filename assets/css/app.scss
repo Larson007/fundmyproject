@@ -1,12 +1,14 @@
-// Importer bootswatch (superhero) (Variables)
 @import "~bootswatch/dist/superhero/variables";
 // Importer bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Importer bootswatch (superhero)
 @import "~bootswatch/dist/superhero/bootswatch";
+
 // Importer font awesome (v4.7)
-@import "~fontawesome-4.7/scss/font-awesome";
-// Copier ici le code CSS
+@import "~font-awesome/scss/font-awesome";
+
+// Coller le code CSS
 
 body {
   padding-top: 100px;
@@ -46,3 +48,4 @@ ul.badges > li {
 .progress {
   margin-bottom: 1em;
 }
+

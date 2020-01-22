@@ -19,25 +19,26 @@ class UserFixtures extends Fixture
         $this->encoder = $encoder;
     }
 
+
     public function load(ObjectManager $manager)
     {
         $admin = new User();
         $admin->setFirstname("John");
         $admin->setLastname("Doe");
-        $admin->setEmail("john.doe@gmail.com");
-        $admin->setPassword($this->encoder->encodePassword($admin, "rootroot"));
+        $admin->setEmail("admin@admin.com");
+        $admin->setPassword($this->encoder->encodePassword($admin, "admin"));
         $admin->setRoles(["ROLE_ADMIN"]);
         $this->setReference("john", $admin); //implements userId
         $manager->persist($admin);
 
-        $regina = new User();
-        $regina->setFirstname("regina");
-        $regina->setLastname("Fallange");
-        $regina->setEmail("regina.fallange@gmail.com");
-        $regina->setPassword($this->encoder->encodePassword($admin, "friends"));
-        $regina->setRoles(["ROLE_USER"]);
-        $this->setReference("regina", $regina); //implements userId
-        $manager->persist($regina);
+        $emma = new User();
+        $emma->setFirstname("Emma");
+        $emma->setLastname("Swann");
+        $emma->setEmail("emma.swann@yahoo.fr");
+        $emma->setPassword($this->encoder->encodePassword($admin, "rumple"));
+        $emma->setRoles(["ROLE_USER"]);
+        $this->setReference("emma", $emma); //implements userId
+        $manager->persist($emma);
 
         $manager->flush();
     }
