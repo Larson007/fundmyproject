@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Project
 {
@@ -215,4 +218,13 @@ class Project
 
         return $this;
     }
+    //Pour enregistrer la date et l'heure quand les utilisateurs clique sur "Envoyer" dans le formulaire
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        $this->setCreatedAt(new DateTime()); //DateTime() : date, heure, minutes de maintenant
+    }
 }
+

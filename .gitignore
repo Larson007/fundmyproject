@@ -1,6 +1,7 @@
 .idea/
 public/uploads/
 public/images/
+html/
 
 
 ###> symfony/framework-bundle ###
